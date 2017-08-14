@@ -1,0 +1,15 @@
+#!/usr/bin/env ansible-playbook
+---
+# ansible script to set up ssh users
+
+
+#- hosts: all
+- hosts: 172.16.176.142
+
+  remote_user: root
+  become: false
+
+
+
+  roles:
+  - doSSH

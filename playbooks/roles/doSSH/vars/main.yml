@@ -1,0 +1,43 @@
+---
+# vars for the sirranSSH role
+
+
+ssh_users:
+  - name: user1
+    key: "{{ lookup('file', 'user1.pub') }}"
+    grp_ops: true
+    groups: "ops"
+  - name: user2
+    key: "{{ lookup('file', 'user2.pub') }}"
+    grp_ops: true
+    groups: "ops"
+  - name: devuser
+    key: "ssh-rsa AAABBBCCC sshdevuser@nogroup"
+    groups: "dev"
+
+# ssh_users_v2:
+#   "dfligg":
+
+# ssh_key_lookup:
+#   "dfligg": "{{ lookup('file', 'dfligg.pub') }}"
+#   "mrobey": "{{ lookup('file', 'mrobey.pub') }}"
+
+# ssh_group_ops:
+#   - dfligg
+#   - mrobey
+
+# ssh_group_dev:
+#   - dev1
+#   - dev2
+
+
+# blacklisted_keys:
+#   - fred
+
+# users:
+#   alice:
+#     name: Alice Appleworth
+#     telephone: 123-456-7890
+#   bob:
+#     name: Bob Bananarama
+#     telephone: 987-654-3210
