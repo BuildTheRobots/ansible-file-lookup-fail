@@ -13,12 +13,12 @@
 
 - name: Write users to temp REMOTE file
   lineinfile:
-    path: "/tmp/ansible-lines-test"
+    dest: "/tmp/ansible-lines-test"
     line: "{{ item.key }}"
   with_items: "{{ssh_users}}"
 
 # fails to lookup
 - name: Write users to LOCAL temp file
-  local_action: lineinfile path="/tmp/ansible-lines-test" line="{{ item.key }}"
+  local_action: lineinfile dest="/tmp/ansible-lines-test" line="{{ item.key }}"
   with_items: "{{ssh_users}}"
 
